@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Focus</title>
+</head>
+<body>
+    <img class='' src="./gifbg.gif" alt="">
+    <div class="circle grayscale"></div>
+    <select name="efects" class='efects'>
+        <option value="blur">Blur</option>
+        <option value="invert">Invert</option>
+        <option value="contrast">Contrast</option>
+        <option value="rotate">Hue Rotate</option>
+        <option value="grayscale">Grayscale</option>
+        <option value="saturate">Saturate</option>
+    </select>
+
+    <script type='text/javascript'>
+        const circle = document.querySelector('.circle');
+        const efects = document.querySelector('.efects');
+        addEventListener('mousemove', (e) => {
+            circle.style.top = e.y + 'px';
+            circle.style.left = e.x + 'px';
+        });
+        efects.addEventListener('change', ()=>{
+            circle.setAttribute('class', 'circle ' + efects.value);
+        });
+    </script>
+</body>
+</html>
